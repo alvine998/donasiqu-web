@@ -25,7 +25,7 @@ export default function DonationPage() {
   const [loading, setLoading] = useState(true);
   const [donationAmount, setDonationAmount] = useState<number | ''>('');
   const [name, setName] = useState('');
-  const [email, setEmail] = ''; // Initialize as empty string
+  const [email, setEmail] = useState(''); // Initialize as empty string
   const [message, setMessage] = useState('');
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [suggestedAmounts] = useState([50000, 100000, 200000, 500000]);
