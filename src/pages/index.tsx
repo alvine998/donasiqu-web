@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import SearchBar from '../components/SearchBar';
+import Layout from '../components/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -79,7 +80,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className={inter.className}>
+    <Layout title="Donasiqu - Platform Donasi Online">
       <Head>
         <title>Donasiqu - Platform Donasi Online</title>
         <meta name="description" content="Platform donasi online untuk berbagai kebutuhan sosial" />
@@ -100,7 +101,7 @@ const Home: NextPage = () => {
           <SearchBar />
           
           <div className="mt-8 flex justify-center space-x-4">
-            <Link href="/cari" className="px-6 py-3 border border-transparent text-base font-medium rounded-md text-violet-700 bg-white hover:bg-gray-100 md:py-3 md:text-base md:px-8">
+            <Link href="/donasi" className="px-6 py-3 border border-transparent text-base font-medium rounded-md text-violet-700 bg-white hover:bg-gray-100 md:py-3 md:text-base md:px-8">
               Donasi Sekarang
             </Link>
             <Link href="/galang-dana" className="px-6 py-3 border border-white text-base font-medium rounded-md text-white border-opacity-50 hover:bg-violet-600 md:py-3 md:text-base md:px-8">
@@ -200,7 +201,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
