@@ -22,6 +22,96 @@ interface Campaign {
   gallery: string[];
 }
 
+// Mock data for campaigns
+const mockCampaigns = [
+  {
+    id: 1,
+    title: "Wakaf Mushaf Al-Qur`an",
+    description: "Masih banyak saudara-saudara kita di pelosok negeri yang kesulitan mendapatkan mushaf Al-Qur'an.",
+    fullDescription: `Program wakaf mushaf Al-Qur'an ini bertujuan untuk menyediakan mushaf Al-Qur'an yang layak bagi masyarakat di pelosok negeri. Dana yang terkumpul akan digunakan untuk:
+    
+- Mencetak mushaf Al-Qur'an berkualitas
+- Distribusi ke daerah-daerah terpencil
+- Pembangunan rak atau tempat penyimpanan mushaf
+- Program tahfiz dan pengajaran baca tulis Al-Qur'an
+
+Dengan wakaf Anda, kita bisa membantu saudara-saudara kita yang membutuhkan untuk bisa membaca dan mempelajari Al-Qur'an dengan baik. Setiap rupiah yang Anda donasikan sangat berarti untuk mewujudkan program ini.`,
+    image: "/images/campaign-1.jpeg",
+    progress: 2,
+    amountRaised: 1000000,
+    target: 50000000,
+    daysLeft: 90,
+    category: "Wakaf",
+    organizer: "Lembaga Wakaf Al-Qur'an Nusantara",
+    location: "Jakarta",
+    organizerImage: "/images/organizer-1.jpg",
+    organizerDescription: "Lembaga Wakaf Al-Qur'an Nusantara telah berkiprah selama 5 tahun dalam mendistribusikan mushaf Al-Qur'an ke berbagai pelosok negeri. Kami berkomitmen untuk memastikan setiap muslim memiliki akses terhadap Al-Qur'an.",
+    gallery: [
+      "/images/campaign-1.jpeg",
+      "/images/campaign-2.jpeg",
+      "/images/campaign-3.jpeg"
+    ]
+  },
+  {
+    id: 2,
+    title: "Donasi Pembangunan Rumah Allah",
+    description: "Alhamdulillah, di tengah semangat kebersamaan warga Kampung Citajung RT 001 RW 001, Desa Mekarjaya, Kecamatan Banjaran",
+    fullDescription: `Program pembangunan masjid ini merupakan inisiatif warga Kampung Citajung yang membutuhkan tempat ibadah yang layak. Dana yang terkumpul akan digunakan untuk:
+    
+- Pembangunan struktur utama masjid
+- Pembelian material bangunan
+- Perlengkapan shalat dan sound system
+- Pengerjaan lantai dan atap
+- Pengecatan dan dekorasi
+
+Dengan bantuan Anda, kita bisa mewujudkan rumah Allah yang layak untuk beribadah dan kegiatan keagamaan masyarakat setempat. Setiap donasi yang Anda berikan adalah amal jariyah yang pahalanya akan terus mengalir.`,
+    image: "/images/campaign-2.jpeg",
+    progress: 2,
+    amountRaised: 8500000,
+    target: 368339400,
+    daysLeft: 90,
+    category: "Wakaf",
+    organizer: "DKM Al-Ikhlas Kampung Citajung",
+    location: "Banjaran, Jawa Barat",
+    organizerImage: "/images/organizer-2.jpg",
+    organizerDescription: "DKM Al-Ikhlas adalah pengurus masjid yang bertanggung jawab atas pembangunan dan pengelolaan masjid di Kampung Citajung. Kami berkomitmen untuk membangun tempat ibadah yang nyaman dan representatif.",
+    gallery: [
+      "/images/campaign-2.jpeg",
+      "/images/campaign-1.jpeg",
+      "/images/campaign-3.jpeg"
+    ]
+  },
+  {
+    id: 3,
+    title: "Bantuan Bencana Alam",
+    description: "Indonesia adalah negeri dengan sejuta pesona, namun juga negeri yang penuh ujian. Dari Sabang hingga Merauke, bencana alam datang silih berganti",
+    fullDescription: `Program bantuan bencana alam ini bertujuan untuk memberikan dukungan kepada korban bencana di berbagai wilayah di Indonesia. Bantuan yang akan diberikan meliputi:
+    
+- Paket sembako dan makanan siap saji
+- Pakaian layak pakai
+- Obat-obatan dan perlengkapan P3K
+- Tenda pengungsian dan perlengkapan darurat
+- Air bersih dan sanitasi
+
+Dengan bantuan Anda, kita bisa meringankan beban saudara-saudara kita yang menjadi korban bencana. Setiap bantuan yang Anda berikan sangat berarti untuk pemulihan mereka.`,
+    image: "/images/campaign-3.jpeg",
+    progress: 5,
+    amountRaised: 2250000,
+    target: 50000000,
+    daysLeft: 90,
+    category: "Bencana",
+    organizer: "Dompet Dhuafa",
+    location: "Seluruh Indonesia",
+    organizerImage: "/images/organizer-3.jpg",
+    organizerDescription: "Dompet Dhuafa adalah lembaga filantropi Islam yang berkomitmen untuk memberikan bantuan kemanusiaan, khususnya untuk korban bencana alam. Kami telah berpengalaman menangani penanggulangan bencana di berbagai wilayah di Indonesia.",
+    gallery: [
+      "/images/campaign-3.jpeg",
+      "/images/campaign-1.jpeg",
+      "/images/campaign-2.jpeg"
+    ]
+  }
+];
+
 const CampaignDetail = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -32,51 +122,24 @@ const CampaignDetail = () => {
 
   useEffect(() => {
     if (id) {
-      // In a real app, fetch campaign data from an API
-      const fetchCampaign = async () => {
-        try {
-          // Mock data - replace with actual API call
-          const mockCampaign: Campaign = {
-            id: Number(id),
-            title: 'Bantu Pendidikan Anak Yatim di Jakarta',
-            description: 'Bantu pendidikan anak yatim untuk masa depan yang lebih baik',
-            fullDescription: `Program ini bertujuan untuk memberikan akses pendidikan yang layak bagi anak-anak yatim di Jakarta. Dana yang terkumpul akan digunakan untuk:
-            
-- Biaya sekolah dan perlengkapan belajar
-- Buku dan alat tulis
-- Seragam dan sepatu sekolah
-- Transportasi ke sekolah
-- Makanan bergizi
-
-Dengan bantuan Anda, kami berharap dapat membantu meringankan beban pendidikan anak-anak yatim dan memberikan mereka kesempatan untuk meraih cita-cita. Setiap donasi yang Anda berikan sangat berarti bagi masa depan mereka.`,
-            image: '/images/campaign-1.jpg',
-            progress: 75,
-            amountRaised: 37500000,
-            target: 50000000,
-            daysLeft: 15,
-            category: 'Pendidikan',
-            organizer: 'Yayasan Peduli Anak Bangsa',
-            location: 'Jakarta',
-            organizerImage: '/images/organizer-1.jpg',
-            organizerDescription: 'Yayasan Peduli Anak Bangsa telah berdedikasi selama 10 tahun dalam membantu pendidikan anak-anak kurang mampu di seluruh Indonesia. Kami percaya bahwa setiap anak berhak mendapatkan pendidikan yang layak.',
-            gallery: [
-              '/images/gallery-1.jpg',
-              '/images/gallery-2.jpg',
-              '/images/gallery-3.jpg',
-            ],
-          };
-          
-          setCampaign(mockCampaign);
-          setLoading(false);
-        } catch (error) {
-          console.error('Error fetching campaign:', error);
-          setLoading(false);
+      try {
+        const campaignId = Number(id);
+        const foundCampaign = mockCampaigns.find(camp => camp.id === campaignId);
+        
+        if (foundCampaign) {
+          setCampaign(foundCampaign as unknown as Campaign);
+        } else {
+          // If campaign not found, redirect to 404 or home
+          router.push('/');
         }
-      };
-
-      fetchCampaign();
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching campaign:', error);
+        setLoading(false);
+        router.push('/');
+      }
     }
-  }, [id]);
+  }, [id, router]);
 
   const formatCurrency = (amount: number): string => {
     return new Intl.NumberFormat('id-ID', {
@@ -278,7 +341,10 @@ Dengan bantuan Anda, kami berharap dapat membantu meringankan beban pendidikan a
                     </div>
                   </div>
                   <Link 
-                    href={`/donasi/${campaign.id}`}
+                    href={{
+                      pathname: `/donasi/${campaign.id}`,
+                      query: { amount: donationAmount || '' }
+                    }}
                     className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                   >
                     Donasi Sekarang

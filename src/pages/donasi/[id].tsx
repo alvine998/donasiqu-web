@@ -32,6 +32,11 @@ export default function DonationPage() {
 
   useEffect(() => {
     if (id) {
+      // Read amount from URL query parameters if available
+      if (router.query.amount) {
+        setDonationAmount(Number(router.query.amount));
+      }
+      
       // In a real app, you would fetch the campaign data from your API
       const fetchCampaign = async () => {
         try {

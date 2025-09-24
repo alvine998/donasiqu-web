@@ -17,7 +17,7 @@ const mockCampaigns = [
     location: "Jakarta",
     raised: 12500000,
     target: 50000000,
-    image: "/images/disaster.jpg",
+    image: "/images/campaign-1.jpeg",
     daysLeft: 15,
     description:
       "Bantu saudara-saudara kita yang menjadi korban bencana alam untuk bangkit kembali.",
@@ -31,7 +31,7 @@ const mockCampaigns = [
     location: "Bandung",
     raised: 7500000,
     target: 100000000,
-    image: "/images/medical.jpg",
+    image: "/images/campaign-2.jpeg",
     daysLeft: 30,
     description:
       "Bantu biaya operasi jantung untuk anak-anak yang membutuhkan.",
@@ -45,7 +45,7 @@ const mockCampaigns = [
     location: "Surabaya",
     raised: 12000000,
     target: 50000000,
-    image: "/images/education.jpg",
+    image: "/images/campaign-3.jpeg",
     daysLeft: 45,
     description:
       "Bantu pendidikan anak yatim untuk masa depan yang lebih baik.",
@@ -59,7 +59,7 @@ const mockCampaigns = [
     location: "Bogor",
     raised: 15000000,
     target: 50000000,
-    image: "/images/environment.jpg",
+    image: "/images/campaign-4.jpeg",
     daysLeft: 60,
     description: "Gerakan penanaman 1000 pohon untuk kelestarian lingkungan.",
   },
@@ -72,7 +72,7 @@ const mockCampaigns = [
     location: "Aceh",
     raised: 3500000,
     target: 20000000,
-    image: "/images/refugee.jpg",
+    image: "/images/campaign-5.jpeg",
     daysLeft: 20,
     description: "Bantuan untuk pengungsi konflik di wilayah Aceh.",
   },
@@ -85,7 +85,7 @@ const mockCampaigns = [
     location: "Nusa Tenggara Timur",
     raised: 25000000,
     target: 100000000,
-    image: "/images/school.jpg",
+    image: "/images/campaign-6.jpeg",
     daysLeft: 90,
     description:
       "Renovasi sekolah untuk menciptakan lingkungan belajar yang lebih baik.",

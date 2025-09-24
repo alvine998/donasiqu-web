@@ -68,22 +68,24 @@ export default function PaymentPage() {
 
   useEffect(() => {
     if (id) {
-      // In a real app, you would fetch the donation data from your API or state management
-      // For now, we'll use mock data
+      // Get donation data from URL query parameters
+      const { amount, name, email, message, isAnonymous } = router.query;
+      
+      // In a real app, you would fetch the campaign details from your API
       const mockDonation: DonationData = {
         campaignId: id as string,
-        campaignTitle: 'Bantu Pendidikan Anak Yatim Piatu',
-        amount: 100000,
-        name: 'John Doe',
-        isAnonymous: false,
-        message: 'Semoga bermanfaat'
+        campaignTitle: 'Bantu Pendidikan Anak Yatim Piatu', // In a real app, fetch this from API
+        amount: amount ? Number(amount) : 100000, // Use amount from URL or default to 100000
+        name: name as string || 'Donatur',
+        isAnonymous: isAnonymous === 'true',
+        message: message as string
       };
       
       setDonation(mockDonation);
       setPaymentMethods(mockPaymentMethods);
       setLoading(false);
     }
-  }, [id]);
+  }, [id, router.query]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('id-ID', {
